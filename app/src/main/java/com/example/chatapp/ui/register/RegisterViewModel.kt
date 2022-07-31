@@ -6,8 +6,6 @@ import androidx.databinding.ObservableField
 import com.example.chatapp.base.BaseViewModel
 import com.example.chatapp.database.addUserToFirestore
 import com.example.chatapp.model.AppUser
-import com.google.android.gms.tasks.OnFailureListener
-import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -22,7 +20,7 @@ class RegisterViewModel : BaseViewModel<Navigator>() {
     var emailError = ObservableField<String>()
     var passwordError = ObservableField<String>()
     var phoneNumberError = ObservableField<String>()
-    val auth = Firebase.auth
+    private val auth = Firebase.auth
     //fun CharSequence?.isValidEmail() = !email.get().isNullOrBlank() && Patterns.EMAIL_ADDRESS.matcher(email.get()).matches()
 
     @JvmName("isValidEmail1")

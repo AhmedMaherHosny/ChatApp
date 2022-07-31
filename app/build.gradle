@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'com.google.gms.google-services'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -62,4 +63,7 @@ dependencies {
 
     implementation platform('com.google.firebase:firebase-bom:30.2.0')
     implementation 'com.google.firebase:firebase-firestore-ktx'
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
 }

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="msg"
+            type="com.example.chatapp.model.Message" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/time"
+                android:text="@{msg.formatDateTime()}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#282F39"
+                android:layout_gravity="end|bottom"
+                android:layout_marginEnd="7dp"
+                tools:text="3:00pm" />
+
+            <TextView
+                android:id="@+id/msgContent"
+                android:text="@{msg.content}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:textSize="16sp"
+                android:background="@drawable/bg_sent_msg"
+                android:padding="12dp"
+                android:textColor="@color/white"
+                tools:text="d kwdkw;alkd wl; kewk;j wka;jeawk;je wak;ej dlw'akd lawk dwalkd aw kdd law'kdawl'k dlw'k l'w kdwla 'kdl kdk law'k dlaw'kdk law'kdaw' kddlawk'wkl' kdwal' kdwal'k dawl' kdlw' kdld kaw'l kdwal' kdwal'kdawk; ejwak;ej wak; ejwka; eje kjawek; jawek ;jwa;ek jawk;e jwak; je kw;ejak; wjekaw; ejwak; ejwak; ejwk;ae jwka; e;wka ej" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

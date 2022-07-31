@@ -6,7 +6,7 @@ import com.google.firebase.ktx.Firebase
 
 class VerificationViewModel : BaseViewModel<Navigator>() {
     val auth = Firebase.auth
-    fun verifyNow(){
+    fun verifyNow() {
         val userv = auth.currentUser
         userv!!.sendEmailVerification().addOnSuccessListener {
             msgvLiveData.postValue("Verification email has been sent check your email")

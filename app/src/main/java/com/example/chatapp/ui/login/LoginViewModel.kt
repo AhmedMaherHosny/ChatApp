@@ -3,10 +3,13 @@ package com.example.chatapp.ui.login
 import androidx.databinding.ObservableField
 import com.example.chatapp.base.BaseViewModel
 import com.example.chatapp.database.signIn
+import com.example.chatapp.model.AppUser
+import com.example.chatapp.other.DataUtils
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class LoginViewModel : BaseViewModel<Navigator>() {
+    private lateinit var appUser:AppUser
     var email = ObservableField<String>()
     var password = ObservableField<String>()
     val auth = Firebase.auth
@@ -32,6 +35,7 @@ class LoginViewModel : BaseViewModel<Navigator>() {
     private fun checkUserInFirestore(uid: String?) {
         showLoading.postValue(true)
         signIn(uid!!, {
+            appUser = it.toObject(AppUser::class.java)!!
             showLoading.postValue(false)
             if (it.exists()) {
                 checkIfVerifiedEmail()
@@ -46,8 +50,10 @@ class LoginViewModel : BaseViewModel<Navigator>() {
 
     private fun checkIfVerifiedEmail() {
         val userr = auth.currentUser
-        if (userr!!.isEmailVerified)
+        if (userr!!.isEmailVerified) {
+            DataUtils.user = appUser
             navigator?.openHomeScreen()
+        }
         else
             navigator?.openVerificationScreen()
     }

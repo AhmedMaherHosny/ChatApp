@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="vm"
             type="com.example.chatapp.ui.register.RegisterViewModel" />
@@ -18,7 +19,7 @@
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="13dp"
             android:background="@color/transparent"
             android:theme="@style/Theme.ChatApp.AppBarOverlay"
             app:elevation="0dp">
@@ -73,8 +74,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    app:layout_constraintLeft_toLeftOf="parent"
                     app:error="@{vm.userNameError}"
+                    app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <EditText
@@ -82,8 +83,8 @@
                         android:layout_height="match_parent"
                         android:background="@color/transparent"
                         android:hint="@string/username"
-                        android:text="@={vm.userName}"
-                        android:inputType="text" />
+                        android:inputType="text"
+                        android:text="@={vm.userName}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -91,8 +92,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    app:layout_constraintLeft_toLeftOf="parent"
                     app:error="@{vm.emailError}"
+                    app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/UserName">
 
                     <EditText
@@ -100,8 +101,8 @@
                         android:layout_height="match_parent"
                         android:background="@color/transparent"
                         android:hint="@string/email"
-                        android:text="@={vm.email}"
-                        android:inputType="textEmailAddress" />
+                        android:inputType="textEmailAddress"
+                        android:text="@={vm.email}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -109,9 +110,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
+                    app:error="@{vm.passwordError}"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/Email"
-                    app:error="@{vm.passwordError}"
                     app:passwordToggleEnabled="true">
 
                     <EditText
@@ -119,24 +120,26 @@
                         android:layout_height="match_parent"
                         android:background="@color/transparent"
                         android:hint="@string/password"
-                        android:text="@={vm.password}"
-                        android:inputType="textWebPassword" />
+                        android:inputType="textWebPassword"
+                        android:text="@={vm.password}" />
                 </com.google.android.material.textfield.TextInputLayout>
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/phoneNumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    app:layout_constraintLeft_toLeftOf="parent"
                     app:error="@{vm.phoneNumberError}"
+                    app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/Password">
+
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@color/transparent"
                         android:hint="@string/phonenumber"
-                        android:text="@={vm.phoneNumber}"
-                        android:inputType="phone" />
+                        android:inputType="phone"
+                        android:text="@={vm.phoneNumber}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.button.MaterialButton
@@ -147,12 +150,12 @@
                     android:drawableEnd="@drawable/ic_arrow_right"
                     android:drawableTint="#BDBDBD"
                     android:elevation="500dp"
+                    android:onClick="@{()->vm.createAccount()}"
                     android:paddingVertical="13dp"
                     android:text="@string/create_account"
                     android:textAlignment="textStart"
                     android:textColor="#BDBDBD"
-                    app:cornerRadius="10dp"
-                    android:onClick="@{()->vm.createAccount()}"/>
+                    app:cornerRadius="10dp" />
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

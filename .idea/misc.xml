@@ -3,10 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/ahmed/AndroidStudioProjects/ChatApp/app/src/main/res/layout/activity_home.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/ahmed/AndroidStudioProjects/ChatApp/app/src/main/res/layout/activity_login.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/ahmed/AndroidStudioProjects/ChatApp/app/src/main/res/drawable/bg_recieve_msg.xml" value="0.172" />
+        <entry key="..\:/Users/ahmed/AndroidStudioProjects/ChatApp/app/src/main/res/drawable/bg_sent_msg.xml" value="0.172" />
+        <entry key="..\:/Users/ahmed/AndroidStudioProjects/ChatApp/app/src/main/res/drawable/item_msg_recieve.xml" value="0.172" />
+        <entry key="..\:/Users/ahmed/AndroidStudioProjects/ChatApp/app/src/main/res/layout/activity_add_room.xml" value="0.27025641025641023" />
+        <entry key="..\:/Users/ahmed/AndroidStudioProjects/ChatApp/app/src/main/res/layout/activity_chat.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/ahmed/AndroidStudioProjects/ChatApp/app/src/main/res/layout/activity_home.xml" value="0.264" />
+        <entry key="..\:/Users/ahmed/AndroidStudioProjects/ChatApp/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/ahmed/AndroidStudioProjects/ChatApp/app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/Users/ahmed/AndroidStudioProjects/ChatApp/app/src/main/res/layout/activity_splash.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/ahmed/AndroidStudioProjects/ChatApp/app/src/main/res/layout/activity_verification.xml" value="0.264" />
+        <entry key="..\:/Users/ahmed/AndroidStudioProjects/ChatApp/app/src/main/res/layout/item_msg_recieve.xml" value="0.27025641025641023" />
+        <entry key="..\:/Users/ahmed/AndroidStudioProjects/ChatApp/app/src/main/res/layout/item_msg_sent.xml" value="0.27025641025641023" />
+        <entry key="..\:/Users/ahmed/AndroidStudioProjects/ChatApp/app/src/main/res/layout/item_room.xml" value="0.25" />
+        <entry key="..\:/Users/ahmed/AndroidStudioProjects/ChatApp/app/src/main/res/layout/item_spinner_category.xml" value="0.27447916666666666" />
       </map>
     </option>
   </component>

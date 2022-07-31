@@ -28,6 +28,9 @@ abstract class BaseActivity<VM : BaseViewModel<*>, DB : ViewDataBinding> : AppCo
         viewModel.msgvLiveData.observe(this) {
             showAlertDialogCustom(it)
         }
+        viewModel.msgvvLiveData.observe(this) {
+            showAlertDialogCustom1(it)
+        }
         viewModel.showLoading.observe(this) {
             if (it == true)
                 showLoading()
@@ -52,9 +55,19 @@ abstract class BaseActivity<VM : BaseViewModel<*>, DB : ViewDataBinding> : AppCo
             }.show()
     }
 
-    private var progressDialog : ProgressDialog?=null
+    private fun showAlertDialogCustom1(message: String) {
+        MaterialAlertDialogBuilder(this).setMessage(message).setCancelable(false)
+            .setPositiveButton("OK") { dialog, which ->
+//                val intent = Intent(this, HomeActivity::class.java)
+//                startActivity(intent)
+                dialog.dismiss()
+                finish()
+            }.show()
+    }
+
+    private var progressDialog: ProgressDialog? = null
     private fun showLoading() {
-        progressDialog= ProgressDialog(this)
+        progressDialog = ProgressDialog(this)
         progressDialog?.setMessage("Loading...")
         progressDialog?.setCancelable(false)
         progressDialog?.show()
@@ -62,8 +75,9 @@ abstract class BaseActivity<VM : BaseViewModel<*>, DB : ViewDataBinding> : AppCo
 
     private fun hideLoading() {
         progressDialog?.dismiss()
-        progressDialog=null
+        progressDialog = null
     }
-        abstract fun getLayoutId(): Int
-        abstract fun initViewModel(): VM
-    }
+
+    abstract fun getLayoutId(): Int
+    abstract fun initViewModel(): VM
+}
