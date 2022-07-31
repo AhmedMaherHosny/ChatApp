@@ -1,7 +1,6 @@
 package com.example.chatapp.ui.chat
 
 import androidx.databinding.ObservableField
-import androidx.lifecycle.MutableLiveData
 import com.example.chatapp.base.BaseViewModel
 import com.example.chatapp.database.addMsg
 import com.example.chatapp.model.Message
@@ -11,9 +10,9 @@ import java.util.*
 
 class ChatViewModel : BaseViewModel<Navigator>() {
     val msgField = ObservableField<String>()
-    var room: Room?=null
+    var room: Room? = null
 
-    fun sndMsg(){
+    fun sndMsg() {
         val msg = Message(
             content = msgField.get()!!.trim(),
             roomID = room?.id,
@@ -21,8 +20,8 @@ class ChatViewModel : BaseViewModel<Navigator>() {
             senderName = DataUtils.user?.userName,
             dateTime = Date().time,
         )
-        when(msg.content.isNullOrBlank()){
-            false->{
+        when (msg.content.isNullOrBlank()) {
+            false -> {
                 addMsg(msg, {
                     msgField.set("")
                 }, {
