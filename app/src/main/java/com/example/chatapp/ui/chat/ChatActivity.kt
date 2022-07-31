@@ -36,23 +36,24 @@ class ChatActivity : BaseActivity<ChatViewModel, ActivityChatBinding>(), Navigat
     }
 
     private fun realTimeMsgListener() {
-        getMsgRef(room.id!!).orderBy("dateTime", Query.Direction.ASCENDING).addSnapshotListener { snapShot, ex ->
-            when {
-                ex != null -> {
-                    Toast.makeText(this, ex.localizedMessage, Toast.LENGTH_LONG).show()
-                }
-                else -> {
-                    val newMsgList = mutableListOf<Message>()
-                    snapShot!!.documentChanges.forEach { doc ->
-                        if (doc.type == DocumentChange.Type.ADDED) {
-                            newMsgList.add(doc.document.toObject(Message::class.java))
-                        }
+        getMsgRef(room.id!!).orderBy("dateTime", Query.Direction.ASCENDING)
+            .addSnapshotListener { snapShot, ex ->
+                when {
+                    ex != null -> {
+                        Toast.makeText(this, ex.localizedMessage, Toast.LENGTH_LONG).show()
                     }
-                    msgAdapter.appendMsgs(newMsgList)
-                    binding.recyclerView.smoothScrollToPosition(msgAdapter.itemCount)
+                    else -> {
+                        val newMsgList = mutableListOf<Message>()
+                        snapShot!!.documentChanges.forEach { doc ->
+                            if (doc.type == DocumentChange.Type.ADDED) {
+                                newMsgList.add(doc.document.toObject(Message::class.java))
+                            }
+                        }
+                        msgAdapter.appendMsgs(newMsgList)
+                        binding.recyclerView.smoothScrollToPosition(msgAdapter.itemCount)
+                    }
                 }
             }
-        }
     }
 
     override fun getLayoutId(): Int {
